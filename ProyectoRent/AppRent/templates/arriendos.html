@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block contenidoQueCambia %}
+    <div class="list-container">
+        <div class="list" style="float: right;">
+            <h3>Reservar Vehiculo</h3>
+            <form action="{% url 'FormularioReserva' %}" method="post">
+                {% csrf_token %}
+                {{ miFormulario2.as_p }}
+                <button type="submit">Reservar</button>
+            </form>
+        </div>
+        <div class="list">
+            <h3>Lista de Clientes</h3>
+            {% include 'lista_clientes.html' %}
+        </div>
+        <div class="list">
+            <h3>Lista de Vehiculos</h3>
+            {% include 'lista_vehiculos.html' %}
+        </div>
+    </div>
+{% endblock contenidoQueCambia %}

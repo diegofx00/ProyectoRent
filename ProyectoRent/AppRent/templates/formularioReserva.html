@@ -1,0 +1,6 @@
+ <form action="{% url 'FormularioReserva' %}" method="post">{% csrf_token %}
+
+    {{miFormulario2.as_p}}
+
+   <button type="submit">Reservar</button>
+ </form>

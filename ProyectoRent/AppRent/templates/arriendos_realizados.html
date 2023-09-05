@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Arriendos Realizados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>RUT</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Término</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for arriendo in arriendos_query %}
+                <tr>
+                    <td>{{ arriendo.nombre }}</td>
+                    <td>{{ arriendo.apellidos }}</td>
+                    <td>{{ arriendo.rut }}</td>
+                    <td>{{ arriendo.telefono }}</td>
+                    <td>{{ arriendo.email }}</td>
+                    <td>{{ arriendo.fecha_inicio }}</td>
+                    <td>{{ arriendo.fecha_termino }}</td>
+                    <td>{{ arriendo.marca }}</td>
+                    <td>{{ arriendo.modelo }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

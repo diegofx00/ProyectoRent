@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <table id="vehic_list_table" style="border-color: black;">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Año</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {%if vehiculos_context%}
+            {%for vehic in vehiculos_context%}
+            <tr>
+                <td>{{vehic.id}}</td>
+                <td>{{vehic.marca}}</td>
+                <td>{{vehic.modelo}}</td>
+                <td>{{vehic.year}}</td>
+
+            </tr>
+            {%endfor%}
+    
+            {%else%}
+                <h1>No hay registros de Vehiculos</h1>
+            {%endif%}
+        </tbody>
+    </table>
+    </body>
+</html>
+
+    

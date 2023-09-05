@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block contenidoQueCambia %}
+    <div style="display: flex; justify-content: space-between;">
+        <div style="width: 30%;">
+            
+            <h2>Buscar Cliente por Nombre</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form_busqueda.as_p }}
+                <button type="submit">Buscar</button>
+            </form>
+
+            
+            {% if resultados %}
+            <h2>Resultados de la búsqueda:</h2>
+            <ul>
+                {% for cliente in resultados %}
+                    <li>{{ cliente.nombre }} {{ cliente.apellidos }} - {{ cliente.rut }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No se encontraron resultados.</p>
+            {% endif %}
+        </div>
+        <div style="width: 30%;">
+            <!-- Formulario para agregar clientes a la derecha -->
+            <h2>Agregar Nuevo Cliente</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form_agregar.as_p }}
+                <button type="submit">Agregar Cliente</button>
+            </form>
+        </div>
+    </div>
+{% endblock contenidoQueCambia %}

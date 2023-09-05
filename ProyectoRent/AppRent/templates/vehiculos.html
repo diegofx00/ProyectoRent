@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+
+{% block contenidoQueCambia %}
+
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            {% include 'lista_vehiculos.html' %}
+        </div>
+        <div style="flex: 1;">
+            {% include 'agregar_vehiculo.html' %}
+        </div>
+    </div>
+    
+{% endblock contenidoQueCambia %}
